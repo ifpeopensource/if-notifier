@@ -30,7 +30,17 @@
 </p>
 
 ## Projeto
+
 Esse bot :robot: foi feito como uma forma de deixar os estudantes que utilizam discord sempre atualizados nas notícias de seu campus. Envia novas notícias do site do IFPE para os canais de anuncio dos servidores para sempre mantê-los atualizados ⏫. 
+
+## Dependências
+
+Para utilizar o bot você precisa das bibliotecas:
+<ul>
+	<li><a href="https://github.com/Rapptz/discord.py">Discord.py</a></li>
+	<li><a href="https://pypi.org/project/beautifulsoup4/">BeautifulSoap4</a></li>
+	
+</ul>
 
 ## Time
 
