@@ -1,23 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
-
-class News:
-	def __init__(self,title,description,thumbnail,link):
-		self.thumbnail = thumbnail.rstrip()
-		self.title = title.rstrip()
-		if description:
-			self.description = description.rstrip()
-		else:
-			self.description = "Sem descrição!"
-		self.link = link.rstrip()
-
-	def __repr__(self):
-		return f"Title:{self.title}\nDescription:{self.description}\nLink:{self.link}\nImage Link:{self.thumbnail}\n"
-
-	def __eq__(self,o):
-		return all([self.title==o.title,self.description==o.description,self.link==o.link]) 
-
-
+from news_class import News
 
 #Retorna a url para a imagem em tamanho completo
 def get_image_url(prev_url):

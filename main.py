@@ -3,6 +3,7 @@ from discord.ext import commands, tasks
 from get_news import get_news
 from replit import db
 from json import JSONEncoder
+from news_class import dictToNews
 
 #Cria uma classe para permitir que as instâncias de News sejam serializadas
 class NewsEncoder(JSONEncoder):
@@ -13,9 +14,14 @@ bot = commands.Bot(command_prefix="&", intents=discord.Intents.all())
 
 #Carrega da memória as notícias já enviadas
 newsfile = open('current_news.json',"r")
-current_news = json.load(newsfile)
+current_news_dict = json.load(newsfile)
+current_news={}
+for k in current_news_dict:
+	l=[]
+	for e in current_news_dict[k]:
+		l.append(dictToNews(e))
+	current_news[k]=l
 newsfile.close()
-
 
 async def send_news(n,guild):
 	embed = discord.Embed(
@@ -34,7 +40,7 @@ async def send_news(n,guild):
 @tasks.loop(hours=1)
 async def update_news():
 	for guild in bot.guilds:
-		cnews_guild = current_news.get(guild.id)
+		cnews_guild = current_news.get(str(guild.id))
 		try:
 			news = get_news(db[str(guild.id)])
 		except Exception as e:
@@ -57,7 +63,7 @@ async def update_news():
 					traceback.print_exc()
 
 		if not updated:
-			current_news[guild.id] = news
+			current_news[str(guild.id)] = news
 			newsfile = open("current_news.json",'w')
 			json.dump(current_news,newsfile,indent=6,cls=NewsEncoder)
 			newsfile.close()
@@ -100,7 +106,7 @@ async def alterarcampus_error(ctx, error):
 @commands.has_permissions(administrator=True)
 async def atualizarmanual(ctx):
 	guild_id = ctx.guild.id
-	cnews_guild = current_news.get(guild_id)
+	cnews_guild = current_news.get(str(guild_id))
 	try:
 		news = get_news(db[str(guild_id)])
 	except Exception as e:
@@ -123,7 +129,7 @@ async def atualizarmanual(ctx):
 				traceback.print_exc()
 
 	if not updated:
-		current_news[guild_id] = news
+		current_news[str(guild_id)] = news
 		print(f"Manually updated by: {ctx.author}\n{datetime.datetime.now()}\n")
 		try:
 			newsfile = open("current_news.json",'w')
