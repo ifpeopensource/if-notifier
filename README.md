@@ -3,9 +3,9 @@
 </h1>
 
 <p align="center">
-  <img alt="Contador de linguagens" src="https://img.shields.io/github/languages/count/ifpe-open-source/if-notifier?color=%2304D361">
+  <img alt="Contador de linguagens" src="https://img.shields.io/github/languages/count/ifpeopensource/if-notifier?color=%2304D361">
 
-  <img alt="Tamanho do repositório" src="https://img.shields.io/github/repo-size/ifpe-open-source/if-notifier">
+  <img alt="Tamanho do repositório" src="https://img.shields.io/github/repo-size/ifpeopensource/if-notifier">
 	
   <a href="https://www.github.com/gvinfinity">
     <img alt="Feito por Gvinfinity)" src="https://img.shields.io/badge/Feito%20por-Gvinfinity-%2304D361">
@@ -18,11 +18,11 @@
   </a>
 
   <a href="https://github.com/ifpe-open-source/if-notifier/commits/master">
-    <img alt="Último commit" src="https://img.shields.io/github/last-commit/ifpe-open-source/if-notifier">
+    <img alt="Último commit" src="https://img.shields.io/github/last-commit/ifpeopensource/if-notifier">
   </a>
 
   <a href="https://github.com/ifpe-open-source/modelo/issues">
-    <img alt="Issues" src="https://img.shields.io/github/issues/ifpe-open-source/if-notifier">
+    <img alt="Issues" src="https://img.shields.io/github/issues/ifpeopensource/if-notifier">
   </a>
   <a href="https://github.com/ifpe-open-source/modelo/blob/master/LICENSE" target="_blank">
     <img alt="License" src="https://img.shields.io/badge/licença-MIT-brightgreen"/>
