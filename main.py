@@ -150,4 +150,4 @@ async def atualizarmanual_error(ctx, error):
         await ctx.send(msg)
 
 update_news.start()
-bot.run(os.environ['token'])
+bot.run(os.environ['DISCORD-BOT-TOKEN'])
