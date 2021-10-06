@@ -78,14 +78,14 @@ O bot foi criado como um repl do site [Replit](https://replit.com) e utiliza a f
 
 ## Time
 
-Este projeto é mantido pelas seguintes pessoas e por esses [incríveis contribuidores](https://github.com/ifpe-open-source/if-notifier/graphs/contributors).
+Este projeto é mantido pelas seguintes pessoas e por esses [incríveis contribuidores](https://github.com/ifpeopensource/if-notifier/graphs/contributors).
 
 | <a href="https://github.com/gvinfinity"><img src="https://avatars.githubusercontent.com/u/49999449?v=3&s=70" width="100px"/></a>        |
 |-----------------------------------------------------------------------------------------------------|
 | [Gvinfinity](https://github.com/gvinfinity)                                                                | 
 
 ## 🤝 Contribuir
-Contribuições, issues e pedidos de features são bem-vindos!<br />Sinta-se livre para checar a [página de issues](https://github.com/ifpe-open-source/modelo/issues). 
+Contribuições, issues e pedidos de features são bem-vindos!<br />Sinta-se livre para checar a [página de issues](https://github.com/ifpeopensource/modelo/issues). 
 - Crie um fork;
 - Crie um branch com a sua feature: `git checkout -b my-feature`;
 - Faça um commit com as mudanças: `git commit -m 'feat: My new feature'`;
