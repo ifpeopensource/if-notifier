@@ -42,6 +42,40 @@ Para utilizar o bot você precisa das bibliotecas:
 	
 </ul>
 
+## Tutorial de instalação
+
+O bot foi criado como um repl do site [Replit](https://replit.com) e utiliza a feature de Banco de Dados do site, portanto o ideal é que o mesmo seja feito para testes locais. Apesar que você está livre para implementar um banco de dados em forma de arquivo.
+
+<ol>
+	<li>Crie um fork para o repositório</li>
+	<li>Faça login no site [Replit](https://replit.com)</li>
+	<li>Crie um Repl para o bot importando do Github</li>
+	<li>Selecione a linguagem como <img src="https://www.python.org/favicon.ico" width="15px"/>Python e o comando como <code>python main.py</code></li>
+	<li>Na aba de Secrets adicione o token de bot com a key:<code>DISCORD-BOT-TOKEN</code></li>
+</ol>
+
+##### Adquirindo token e link para bot do discord
+<ul>
+	<li>Vá até o site de [desenvolvedores do discord](https://discord.com/developers/applications)</li>
+	<li>Clique no botão <code>New Application</code> e dê um nome para o seu aplicativo</li>
+	<li>Siga para a aba de <code>Bot</code> e então clique em <code>Add Bot</code></li>
+	<li>Ative os seletores para "Presence Intent" e "Server Member Intents"</li>
+	<li>Na seção de token clique para copiar e pegue o seu token</li>
+	<li>Vá então para a aba <code>OAuth2</code></li>
+	<li>Marque os escopos de <code>bot,applications.commands</code></li>
+	<li>Marque as seguintes permissões:
+	<ul>
+		<li>View Channels</li>
+		<li>Send Messages</li>
+		<li>Manage Messages</li>
+		<li>Embed Links</li>
+		<li>Attach Files</li>
+		<li>Read Message History</li>
+	</ul>
+	<li>Por fim, clique no botão <code>Copy</code> para pegar o link para adicionar o bot ao seu servidor</li>
+	</li>
+</ul>
+
 ## Time
 
 Este projeto é mantido pelas seguintes pessoas e por esses [incríveis contribuidores](https://github.com/ifpe-open-source/IF-Notifier/graphs/contributors).
