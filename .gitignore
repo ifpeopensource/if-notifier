@@ -1,0 +1,9 @@
+#Ignore all pycache
+__pycache__/*
+
+#Ignore Poetry files
+poetry.lock
+pyproject.toml
+
+#Ignore news cache
+current_news.json
