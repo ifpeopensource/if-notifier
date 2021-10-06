@@ -78,7 +78,7 @@ O bot foi criado como um repl do site [Replit](https://replit.com) e utiliza a f
 
 ## Time
 
-Este projeto é mantido pelas seguintes pessoas e por esses [incríveis contribuidores](https://github.com/ifpe-open-source/IF-Notifier/graphs/contributors).
+Este projeto é mantido pelas seguintes pessoas e por esses [incríveis contribuidores](https://github.com/ifpe-open-source/if-notifier/graphs/contributors).
 
 | <a href="https://github.com/gvinfinity"><img src="https://avatars.githubusercontent.com/u/49999449?v=3&s=70" width="100px"/></a>        |
 |-----------------------------------------------------------------------------------------------------|
