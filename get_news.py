@@ -21,7 +21,10 @@ def get_news(campus):
 				description=n.find('span', class_="description").string
 			except AttributeError:
 				description=None
-			thumbnail=get_image_url(n.find('img', class_="tileImage")['src'])
+			try:
+				thumbnail=get_image_url(n.find('img', class_="tileImage")['src'])
+			except KeyError:
+				thumbnail="https://github.com/ifpeopensource/if-notifier/blob/main/docs/images/aviso.png"
 			link=title_tag['href']
 
 			nobject=News(title,description,thumbnail,link)
