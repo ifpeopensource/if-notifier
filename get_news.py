@@ -21,10 +21,10 @@ def get_news(campus):
 				description=n.find('span', class_="description").string
 			except AttributeError:
 				description=None
-			if n.find('img', class_="tileImage"):
+			try:
 				thumbnail=get_image_url(n.find('img', class_="tileImage")['src'])
-			else:
-				thumbnail="https://www.ifpe.edu.br/campus/caruaru/noticias/periodo-de-matricula-em-componentes-curriculares-sera-reaberto-para-o-subsequente/bannersite-padrao-aviso.png/"
+			except KeyError:
+				thumbnail="https://github.com/ifpeopensource/if-notifier/blob/main/docs/images/aviso.png"
 			link=title_tag['href']
 
 			nobject=News(title,description,thumbnail,link)
