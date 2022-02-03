@@ -21,7 +21,10 @@ def get_news(campus):
 				description=n.find('span', class_="description").string
 			except AttributeError:
 				description=None
-			thumbnail=get_image_url(n.find('img', class_="tileImage")['src'])
+			if n.find('img', class_="tileImage"):
+				thumbnail=get_image_url(n.find('img', class_="tileImage")['src'])
+			else:
+				thumbnail="https://www.ifpe.edu.br/campus/caruaru/noticias/periodo-de-matricula-em-componentes-curriculares-sera-reaberto-para-o-subsequente/bannersite-padrao-aviso.png/"
 			link=title_tag['href']
 
 			nobject=News(title,description,thumbnail,link)
