@@ -7,3 +7,5 @@ pyproject.toml
 
 #Ignore news cache
 current_news.json
+
+#Ignore Debugging Log

@@ -12,7 +12,7 @@ class News:
 		return f"Title:{self.title}\nDescription:{self.description}\nLink:{self.link}\nImage Link:{self.thumbnail}\n"
 
 	def __eq__(self,o):
-		return all([self.title==o.title,self.description==o.description,self.link==o.link]) 
+		return self.link==o.link
 
 
 def dictToNews(d):
