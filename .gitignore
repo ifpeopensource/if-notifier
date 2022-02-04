@@ -9,3 +9,7 @@ pyproject.toml
 current_news.json
 
 #Ignore Debugging Log
+debug.log
+
+#Ignore VSCode Folder
+.vscode/*
