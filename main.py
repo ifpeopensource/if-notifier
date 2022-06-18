@@ -4,6 +4,7 @@ import asyncio
 import datetime
 import traceback
 import json
+import whatsapp
 from discord.ext import commands, tasks
 from get_news import get_news
 from replit import db
@@ -39,18 +40,20 @@ def update_db():
     db['current_news'] = json.dumps(current_news, indent=6, cls=NewsEncoder)
 
 
-async def send_news(n, guild):
-    embed = discord.Embed(
-        colour=discord.Colour.dark_gold(),
-        title=n.title,
-        description=n.description,
-        url=n.link
-    )
-    embed.set_image(url=n.thumbnail)
-    channels = guild.text_channels
-    for channel in channels:
-        if channel.is_news():
-            await channel.send(embed=embed)
+async def send_news(nlist: list, guild):
+    for n in nlist:
+        embed = discord.Embed(
+            colour=discord.Colour.dark_gold(),
+            title=n.title,
+            description=n.description,
+            url=n.link
+        )
+        embed.set_image(url=n.thumbnail)
+        channels = guild.text_channels
+        for channel in channels:
+            if channel.is_news():
+                await channel.send(embed=embed)
+                break
 
 
 @tasks.loop(hours=1)
@@ -58,39 +61,34 @@ async def update_news():
     load_news()
     global current_news
     for guild in bot.guilds:
-        cnews_guild = current_news.get(str(guild.id))
+        cnews_guild = current_news.get(str(guild.id), [])
         try:
             news = get_news(db[str(guild.id)])
         except Exception as e:
             print(type(e))
             traceback.print_exc()
-        updated = True
-        for n in news:
-            if cnews_guild:
-                verification = n not in cnews_guild
-                if verification:
-                    updated = False
-                    # log = open("debug.log", 'a')
-                    # log.write(f"""
-                    # LOG: CNews loaded, but entry not in\n
-                    # NEWS: {n}\n
-                    # NEWS_DB: {cnews_guild}\n\n""")
-                    # log.close()
-                    await send_news(n, guild)
-            else:
-                try:
-                    updated = False
-                    # log = open("debug.log", 'a')
-                    # log.write(f"""
-                    # LOG: CNews not loaded\n
-                    # NEWS: {n}\n
-                    # NEWS_DB: {cnews_guild}\n\n""")
-                    # log.close()
-                    await send_news(n, guild)
-                except Exception as e:
-                    print(e)
-                    print(type(e))
-                    traceback.print_exc()
+
+        # Create a list of news to send
+        new_news = [n for n in news if n not in cnews_guild]
+
+        if len(new_news > 10):
+            whatsapp.send_alert(guild.id)
+            continue
+
+        if new_news:
+            updated = False
+            try:
+                await send_news(new_news, guild.id)
+                if guild.id == 893328736051683329:
+                    whatsapp.send_news(new_news)
+            except Exception as e:
+                print(e)
+                print(type(e))
+                traceback.print_exc()
+        else:
+            updated = True
+
+
 
         if not updated:
             current_news[str(guild.id)] = news

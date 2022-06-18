@@ -1,0 +1,8 @@
+{
+    "messaging_product": "whatsapp",
+    "to": "PHONE_NUMBER",
+    "type": "text",
+    "text": {
+      "body": ""
+    }
+}

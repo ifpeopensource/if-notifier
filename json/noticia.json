@@ -1,0 +1,48 @@
+{
+  "messaging_product": "whatsapp",
+  "to": "5581997385897",
+  "type": "template",
+  "template": {
+    "name": "noticia",
+    "language": {
+      "code": "pt_BR"
+    },
+    "components": [
+      {
+        "type": "header",
+        "parameters": [
+          {
+            "type": "image",
+            "image": {
+              "link": "https://www.ifpe.edu.br/campus/caruaru/noticias/ifpe-prorroga-prazo-de-inscricoes-do-processo-de-ingresso-2022.2/prorrogacao.png/@@images/a31a0078-8a93-4d27-b878-b71174de37da.png"
+            }
+          }
+        ]
+      },
+      {
+        "type": "body",
+        "parameters": [
+          {
+            "type": "text",
+            "text": "IFPE prorroga prazo de inscrições do Processo de Ingresso 2022.2"
+          },
+          {
+            "type": "text",
+            "text": "Em Caruaru são 120 vagas para os cursos técnicos subsequentes em Segurança do Trabalho, Edificações e Mecatrônica."
+          }
+        ]
+      },
+      {
+        "type": "button",
+        "sub_type": "url",
+        "index": "0",
+        "parameters": [
+          {
+            "type": "text",
+            "text": "ifpe-prorroga-prazo-de-inscricoes-do-processo-de-ingresso-2022.2"
+          }
+        ]
+      }
+    ]
+  }
+}
